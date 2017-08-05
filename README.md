@@ -4,7 +4,7 @@
 ## Getting Started
 - $ create-react-app tictacturing
 - $ cd tictacturing
-- $ yarn Started
+- $ yarn start
 
 ## Built With
 - React, Yarn,
