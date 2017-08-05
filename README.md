@@ -7,4 +7,4 @@
 - $ yarn start
 
 ## Built With
-- React, Yarn,
+- React, Yarn, Babel, GraphQL/Relay
