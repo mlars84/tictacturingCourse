@@ -43,8 +43,8 @@
     "whatwg-fetch": "2.0.3"
   },
   "scripts": {
-    "start": "node scripts/start.js",
-    "build": "node scripts/build.js",
+    "start": "GRAPHQL_ENDPOINT=https://api.graph.cool/relay/v1/cj5zp1w97ckmz0104ybzkya8u node scripts/start.js",
+    "build": "GRAPHQL_ENDPOINT=https://api.graph.cool/relay/v1/cj5zp1w97ckmz0104ybzkya8u node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom"
   },
   "jest": {
@@ -80,6 +80,7 @@
     ]
   },
   "babel": {
+    "plugins": ["react-relay"]
     "presets": [
       "react-app"
     ]
