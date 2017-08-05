@@ -2,9 +2,9 @@
 - Carl Peaslee linkedIn course
 
 ## Getting Started
-$ create-react-app tictacturing
-$ cd tictacturing
-$ yarn Started
+- $ create-react-app tictacturing
+- $ cd tictacturing
+- $ yarn Started
 
 ## Built With
-- React, Yarn, 
+- React, Yarn,
