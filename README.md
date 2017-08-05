@@ -7,4 +7,4 @@
 - $ yarn start
 
 ## Built With
-- React, Yarn, Babel, GraphQL/Relay
+- React, Yarn, Babel, GraphQL/Relay, Material-ui, Git, Heroku.
