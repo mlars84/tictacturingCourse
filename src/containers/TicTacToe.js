@@ -18,7 +18,7 @@ class TicTacToe extends Component {
   componentWillMount() {
     let height = window.innerHeight
     let width = window.innerWidth
-    let size  = (height < width) ? height * .8 : width * .8
+    let size = (height < width) ? height * .8 : width * .8
     let rows = this.state.rows
     let unit = size / rows
     /* Konva state variable needed to generate squares (rect)*/
@@ -39,7 +39,7 @@ class TicTacToe extends Component {
   }
 
   move = (marker, index) => {
-    console.log('Move made', marker, index);
+    console.log('Move made', marker, index)
     //placeholder
   }
 
@@ -79,9 +79,13 @@ class TicTacToe extends Component {
             size={size}
           />
           <Squares
-            unit={unit},
-            coordinates={coordinates},
-            gameState={gameState},
+            unit={unit}
+            coordinates={coordinates}
+            gameState={gameState}
+            win={win}
+            gameOver={gameOver}
+            yourTurn={yourTurn}
+            ownMark={ownMark}
             move={this.move}
           />
         </Stage>
