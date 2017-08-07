@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {Stage} from 'react-konva'
-import {Board} from '../styled/TicTacToe'
+import {Board, Squares} from '../styled/TicTacToe'
 
 class TicTacToe extends Component {
 
@@ -21,15 +21,25 @@ class TicTacToe extends Component {
     let size  = (height < width) ? height * .8 : width * .8
     let rows = this.state.rows
     let unit = size / rows
+    /* Konva state variable needed to generate squares (rect)*/
+    let coordinates = []
+    /* array of y/x coordinates that we can give to square's components */
+    for (let y = 0; y < rows; y++) {
+      for (let x = 0; x < rows; x++) {
+        coordinates.push([ x * unit, y * unit ])
+      }
+    }
 
     this.setState({
       size,
       rows,
-      unit
+      unit,
+      coordinates
     })
   }
 
-  move = () => {
+  move = (marker, index) => {
+    console.log('Move made', marker, index);
     //placeholder
   }
 
@@ -49,7 +59,13 @@ class TicTacToe extends Component {
     let {
       size,
       unit,
-      rows
+      rows,
+      coordinates,
+      gameState,
+      win,
+      gameOver,
+      yourTurn,
+      ownMark
     } = this.state
     return (
       <div>
@@ -62,7 +78,12 @@ class TicTacToe extends Component {
             rows={rows}
             size={size}
           />
-          {/* <Squares/> */}
+          <Squares
+            unit={unit},
+            coordinates={coordinates},
+            gameState={gameState},
+            move={this.move}
+          />
         </Stage>
       </div>
     )

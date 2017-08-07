@@ -30,3 +30,25 @@ export const Board = ({unit, size, rows}) => {
     </Layer>
   )
 }
+
+/* doesn't need access to state */
+export const Squares = ({
+  size,
+  unit,
+  rows,
+  coordinates,
+  gameState,
+  win,
+  gameOver,
+  yourTurn,
+  ownMark
+}) => {
+  
+  return (
+    <Layer>
+      <Text
+
+      />
+    </Layer>
+  )
+}
