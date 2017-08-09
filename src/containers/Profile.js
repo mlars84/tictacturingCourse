@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {Container, Name, GameListHeader, GameList, Column, ColumnLabels} from '../styled/Profile'
+import {Container, Name, GameListHeader, GameList, GameRecord, Column, ColumnLabels} from '../styled/Profile'
 
 class Profile extends Component {
 
@@ -9,21 +9,46 @@ class Profile extends Component {
       games: [
         {
           winner: true,
-          createdAt: '12/25/2016',
+          createdAt: '08/09/2017',
           id: '0001'
         },
         {
           winner: true,
-          createdAt: '12/26/2016',
+          createdAt: '08/10/2017',
           id: '0002'
         },
         {
           winner: true,
-          createdAt: '12/27/2016',
+          createdAt: '08/11/2017',
           id: '0003'
         },
       ]
     }
+  }
+
+  // get syntax automatically fetches when component loads.
+  get records() {
+    return this.props.user.games.map( (game,index) => {
+      return (
+        <GameRecord
+          key={index}
+          index={index}
+        >
+          <Column>
+            {(game.winner) ? 'Won!' : "Didn't win"}
+          </Column>
+          <Column>
+            "ROBOT"
+          </Column>
+          <Column>
+            "No"
+          </Column>
+          <Column>
+            {game.createdAt}
+          </Column>
+        </GameRecord>
+      )
+    })
   }
 
   render() {
@@ -45,12 +70,13 @@ class Profile extends Component {
               Guess
             </Column>
             <Column>
-              GuessedCorrectly
+              Guessed Correctly
             </Column>
             <Column>
               Date
             </Column>
           </ColumnLabels>
+          {this.records}
         </GameList>
       </Container>
     )
