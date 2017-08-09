@@ -35,12 +35,10 @@ class TicTacToe extends Component {
     let size = (height < width) ? height * .8 : width * .8
     let rows = this.state.rows
     let unit = size / rows
-    /* Konva state variable needed to generate squares (rect)*/
     let coordinates = []
-    /* array of y/x coordinates that we can give to square's components */
     for (let y = 0; y < rows; y++) {
       for (let x = 0; x < rows; x++) {
-        coordinates.push([ x * unit, y * unit ])
+        coordinates.push([x*unit, y*unit])
       }
     }
 
@@ -49,15 +47,24 @@ class TicTacToe extends Component {
       rows,
       unit,
       coordinates
+    })
   }
 
   move = (marker, index) => {
     console.log('Move made', marker, index)
+    //placeholder
   }
 
   makeAiMove = (gameState) => {
     let otherMark = this.state.otherMark
-    
+    let openSquares = []
+    gameState.forEach( (square, index) => {
+      if(!square) {
+        openSquares.push(index)
+      }
+    })
+    let aiMove = openSquares[this.random(0, openSquares.length)]
+    this.move(aiMove,otherMark)
   }
 
   random = (min, max) => {
