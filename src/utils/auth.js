@@ -59,3 +59,7 @@ class AuthService {
     location.reload()
   }
 } //end AuthService class
+
+const auth = new AuthService()
+
+export default auth
